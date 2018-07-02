@@ -7,6 +7,13 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
+// Mongoose ODM. . .
+var mongoose = require('mongoose');
+
+// Connect to MongoDB. . .
+mongoose.connect(
+  'mongodb://fakher:1281992Af@ds125331.mlab.com:25331/standupmeetingnotes'
+);
 var app = express();
 
 // assign the swig view engine to .html files . . .
