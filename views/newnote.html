@@ -43,6 +43,12 @@
       <p class="lead">Use this form to enter your daily meeting notes...</p>
     </div>
 
+    {% if message.length > 0 %}
+    <div class="alert alert-danger alert-error">
+      {{ message }}
+    </div>
+    {% endif %}
+
     <form class="form-horizontal" action="newnote" method="post">
       <fieldset>
 
@@ -107,11 +113,8 @@
             <button id="btnSaveNote" name="btnSaveNote" class="btn btn-primary" type="submit">Save</button>
           </div>
         </div>
-
       </fieldset>
     </form>
-
-
   </div>
   <!-- /.container -->
 </body>

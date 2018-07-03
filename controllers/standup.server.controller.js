@@ -35,10 +35,20 @@ exports.create = (req, res) => {
     impediment: req.body.impediment
   });
 
-  entry.save();
-
-  // Redirect to the home page. . .
-  res.redirect(301, '/');
+  entry.save(err => {
+    if (err) {
+      var errMsg =
+        'Sorry, there was an error saving the stand-up meeting note. ' + err;
+      res.render('newnote', {
+        title: 'Standup - New Note (error)',
+        message: errMsg
+      });
+    } else {
+      console.log('Stand-up meeting note was saved!');
+      // Redirect to the home page. . .
+      res.redirect(301, '/');
+    }
+  });
 };
 
 exports.getNote = (req, res) => {
