@@ -12,7 +12,7 @@ var mongoose = require('mongoose');
 
 // Connect to MongoDB. . .
 mongoose.connect(
-  'mongodb://fakher:1281992Af@ds125331.mlab.com:25331/standupmeetingnotes'
+  'mongodb://demo:standup123@ds052827.mlab.com:52827/standupmeetingnotes'
 );
 var app = express();
 
